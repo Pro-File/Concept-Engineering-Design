@@ -34,3 +34,7 @@ html{
     grid-template-areas: ". main-page ."; */
     background: sandybrown;
 }
+.page-1>h1{
+    font-family: var(--heading-font);
+    letter-spacing: 3px;
+}
