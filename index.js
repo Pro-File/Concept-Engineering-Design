@@ -15,7 +15,11 @@ var sad=document.querySelector('.sad');
 
 
 
+var aboutimage=document.querySelector(".about-image")
+
 var page_1 = document.querySelector('.page-1');
+
+
 
 hidden_panel.classList.add('hidden');
 page_1.classList.add('downward');
@@ -104,3 +108,20 @@ abouts.addEventListener('click', function(e){
     
     }
 });
+
+
+window.addEventListener("scroll",function(){
+    if(window.scrollY>300)
+    {
+        aboutimage.classList.add("fadein")
+        aboutimage.classList.remove("fadeout")
+        // cursor.classList.add("changebordercolor")
+    }
+    else{
+        aboutimage.classList.remove("fadein")
+        aboutimage.classList.add("fadeout")
+        // cursor.classList.remove("changebordercolor")
+
+
+    }
+})
