@@ -24,7 +24,7 @@ html{
 }
 .container{
     display: grid;
-    grid-template-rows: repeat(4, minmax(min-content,100vh));
+    grid-template-rows: repeat(3, minmax(min-content,100vh));
     /* grid-template-areas: "page-1"; */
 }
 .page-1{
@@ -490,8 +490,185 @@ html{
 }
 
 /* Page-4 */
-.page-4{
-    background: sienna;
+
+footer{
+	/* position: fixed; */
+	bottom: 0;
+}
+
+@media (max-height:800px){
+	footer { position: static; }
+	header { padding-top:40px; }
+}
+
+
+.footer-distributed{
+	background-color: #2c292f;
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+	padding: 50px 50px 60px 50px;
+	/* margin-top: 80px; */
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	width: 30%;
+}
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px 'Cookie', cursive;
+	margin: 0;
+}
+
+/* The company logo */
+
+.footer-distributed .footer-left img{
+	width: 30%;
+}
+
+.footer-distributed h3 span{
+	color:  #e0ac1c;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+	color:  #8f9296;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+	width: 35%;
+}
+
+
+.footer-distributed .footer-center i{
+	background-color:  #33383b;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+	color:  #e0ac1c;
+	text-decoration: none;;
+}
+
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	width: 30%;
+}
+
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+/* Here is the code for Responsive Footer */
+/* You can remove below code if you don't want Footer to be responsive */
+
+
+@media (max-width: 880px) {
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+
 }
 /* Media Queries */
 @media only screen and (max-width: 1310px){
@@ -602,6 +779,11 @@ html{
     }
 }
 @media only screen and (max-width: 780px){
+    .about-heading{
+        font-size: 5rem;
+        letter-spacing: 4px;
+        word-spacing: 10px;
+    }
     .about-content{
         display: grid;
         grid-template-columns: 100fr;
@@ -610,12 +792,11 @@ html{
                             "about-innercontent";
     }
     .about-image{
-        position: relative;
-        top: 0%;
-        background:url("./man1-removebg-preview.png");
-        background-size: 80% 100%;
+       
+        background:url("./guy1-removebg-preview.png");
+        background-size: 70% 90%;
         background-repeat: no-repeat;
-        background-position-x: center;
+        background-position-x:center;
     }
     .innercontentHead{
         font-size: 3.7rem;
@@ -760,6 +941,11 @@ html{
 
 
 @media only screen and (max-width: 600px){
+    .about-heading{
+        font-size: 4.5rem;
+        letter-spacing: 4px;
+        word-spacing: 10px;
+    }
     .AU>h1{
         font-size: 3.8rem;
         letter-spacing: 2px;
@@ -770,12 +956,14 @@ html{
 }
 @media only screen and (max-width: 550px){
     .about-image{
-        position: relative;
-        top: 0%;
-        background:url("./man1-removebg-preview.png");
-        background-size: 100% 100%;
+     
+        background:url("./guy1-removebg-preview.png");
+      
+
+        background-size: 80% 100%;
         background-repeat: no-repeat;
-        background-position-x: center;
+        background-position: center;
+        
     }
 }
 @media only screen and (max-width: 530px){
@@ -891,17 +1079,50 @@ html{
     }
 }
 @media only screen and (max-width: 450px){
+    .about-page{
+        display: grid;
+        grid-template-rows: 10fr 90fr;
+        grid-template-areas: "about-heading"
+                             "about-content";
+        
+    }
+    .about-image{
+     
+        background:url("./guy1-removebg-preview.png");
+
+
+        background-size: 85% 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        
+    }
+    
+    .innercontentHead>p{
+        margin-bottom: 0px;
+        
+    }
+    .about-innercontent{
+  
+        display: grid;
+        grid-template-rows: 40fr 60fr;
+        grid-template-areas: "innercontentHead" 
+                            "innerCont";
+    }
+    
+   
     .innercontentHead{
+      
         font-size: 3rem;
         letter-spacing: 3px;
         color:rgb(64, 78, 92);
         font-family: var(--heading-font);
         font-weight: var(--medium);
-        position: relative;
-        top: 0%;
+     
     }
     .innerCont{
         /* background: cyan; */
+        position: relative;
+        top: 5%;
         font-size: 1.5rem;
         font-family: var(--para-font);
         color:rgb(64, 78, 92);
@@ -943,11 +1164,40 @@ html{
         letter-spacing: 3px;
     }
     .about-image{
-        background:url("./man1-removebg-preview.png");
-        background-size: 100% 80%;
+     
+        background:url("./guy1-removebg-preview.png");
+       
+
+        background-size: 90% 90%;
         background-repeat: no-repeat;
-        background-position-x: center;
-    
+        background-position: center;
+
+        
+    }
+    .about-heading{
+        font-size: 3.5rem;
+        letter-spacing: 4px;
+        word-spacing: 10px;
+    }
+   
+    .innerCont{
+        /* background: cyan; */
+        position: relative;
+        bottom: 20%;
+        font-size: 1.5rem;
+        font-family: var(--para-font);
+        color:rgb(64, 78, 92);
+        line-height: 1.5;
+    }
+
+}
+@media only screen and (max-width: 356px){
+   
+    .innerCont{
+     
+  
+        font-size: 1.4rem;
+      
     }
 
 }
