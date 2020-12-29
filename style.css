@@ -8,6 +8,11 @@
     justify-content: center;
     align-items: center;
 }
+.flex-start{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
 :root{
     --heading-font: 'Roboto Slab', serif;
     --para-font: 'Barlow', sans-serif;
@@ -18,13 +23,17 @@
     --semi-bold: 600;
     --bold: 700;
     --extra-bold: 800;
+    --color:#2c292f;
+    --head-color: #e0ac1c;
 }
 html{
     font-size: 62.5%;
+    background-color: var(--color);
 }
 .container{
     display: grid;
     grid-template-rows: repeat(3, minmax(min-content,100vh));
+    background-color: var(--color);
     /* grid-template-areas: "page-1"; */
 }
 .page-1{
@@ -40,6 +49,7 @@ html{
    background: linear-gradient(rgba(0, 0, 0, 0.75),rgba(0, 0, 0, 0.75)),url("./home-background.webp");
    background-size: 100% 100%, cover;
    background-position: center;
+   border-bottom: 1px dashed #ffff;
 }
 
 .downward{
@@ -144,12 +154,23 @@ html{
     grid-template-areas:" logo-area space";
 }
 .logo-area{
-    /* background: aqua; */
-    background: url("./Lifconpng.png");
-    background-size: 140px 120px;
-    background-repeat: no-repeat;
-    background-position: center;
+    padding-left: 3rem;
+    flex-flow: column;
 }
+.logo-area>i{
+  font-size: 5rem;
+  color: gray;
+}
+.logo-area h3{
+	color:  #ffffff;
+	font: normal 2rem 'Cookie', cursive;
+	margin: 0;
+}
+
+.logo-area h3 span{
+	color:  #e0ac1c;
+}
+
 .ham-burger{
     /* background: red; */
     display: none;
@@ -183,9 +204,9 @@ html{
 .space ul li a{
     text-decoration: none;
     text-decoration-style: none;
-    color: #ffff;
+    color: var(--head-color);
 }
-.space ul li a:hover{transition: all 0.5s ease-in-out; color: rgba(0, 0, 0, 0.705); cursor: pointer;}
+.space ul li a:hover{transition: all 0.5s ease-in-out; color: rgba(255, 255, 255, 0.705); cursor: pointer;}
 
 .space ul li >#home{
     font-weight: bolder;
@@ -221,7 +242,7 @@ html{
     font-size: 5rem;
     letter-spacing: 2px;
     font-family: var(--heading-font);
-    color:rgb(255, 255, 255);
+    color: var(--head-color);
     padding: 3rem;
 }
 .AU>p{
@@ -305,7 +326,7 @@ html{
     font-size: 3.5rem;
     font-family: var(--heading-font);
     margin: 3rem 0rem 3rem 0rem;
-    color: #ffff;
+    color: var(--head-color);
     letter-spacing: 3px;
 }
 .forms{
@@ -392,15 +413,16 @@ html{
     grid-template-rows: 20fr 80fr;
     grid-template-areas: "about-heading"
                          "about-content";
+    border-bottom: 1px dashed #ffff;
     
 }
 .about-heading{
     /* background: burlywood; */
    
 
-    font-size: 6rem;
+    font-size: 5rem;
     font-weight:var(--medium);
-    color:rgb(64, 78, 92);
+    color:var(--head-color);
    font-family: var(--heading-font);
     letter-spacing: 8px;
     word-spacing: 15px;
@@ -434,7 +456,7 @@ html{
 
     font-size: 4rem;
     letter-spacing: 5px;
-    color:rgb(64, 78, 92);
+    color:var(--head-color);
     font-family: var(--heading-font);
     font-weight: var(--medium);
     position: relative;
@@ -447,12 +469,15 @@ html{
     margin-bottom: 5px;
     
 }
+/* .intro{
+    color: var(--color);
+} */
 .innerCont{
     /* background: cyan; */
     text-align: justify;
     font-size: 2rem;
     font-family: var(--para-font);
-    color:rgb(64, 78, 92);
+    color:#ffff;
     line-height: 1.5;
 }
 .innerCont>p{
@@ -486,14 +511,153 @@ html{
 }
 /* Page-3 */
 .page-3{
-    background: lawngreen;
+    background-color: var(--color);
+    display: grid;
+    position: relative;
+    top: 5%;
+    grid-template-columns: minmax(min-content, 1100px) ;
+    grid-template-rows: 15fr 85fr;
+    grid-template-areas:
+      " services-head "
+      " services ";
 }
+.services-head{
+    grid-area: services-head;
+    width: 90%;
+    height: 100%;
+    position: relative;
+    left: 5%;
+
+}
+
+.services-head>p{
+    font-size: 5rem;
+    font-weight:var(--medium);
+    color:var(--head-color);
+   font-family: var(--heading-font);
+    letter-spacing: 8px;
+    word-spacing: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.services{
+    grid-area: services;
+    width: 100%;
+    height: 100%;
+    margin-top: 2%;
+    /* background-color: rgba(126, 126, 126, 0.5); */
+    background-attachment: fixed;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-row-gap: 3rem;
+    grid-column-gap: 3rem;
+}
+.p{
+    width: 80%;
+    height: 90%;
+    position: relative;
+    left: 10%;
+    background-color: rgba(66, 66, 66, 0.103);
+    box-shadow: 5px 5px 5px  rgba(39, 39, 39, 0.52);
+    flex-flow: column;
+}
+.p>.sub-head{
+    position: relative;
+    top: 40%;
+    font-size: 2.5rem;
+    font-family: var(--btn-font);
+    text-align: center;
+    letter-spacing: 8px;
+    word-spacing: 4px;
+    margin-bottom: 1rem;
+    color: #ffff;
+}
+.hide-items{
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    width: 75%;
+    height: 80%;
+    /* background-color: rgba(255, 140, 0, 0.322); */
+    opacity: 0;
+}
+.icon-set{
+    position: relative;
+    top: 100%;
+    width: 100%;
+    height: 50%;
+    /* background-color: cyan; */
+}
+.icon-set>i{
+    font-size: 4rem;
+    padding-left: 3rem;
+    padding-top: 2rem;
+}
+.icon-set>i:hover{ cursor: pointer; color: #ffff;}
+.p:hover .hide-items{
+    cursor: pointer;
+    transition: all 400ms ease-in-out;
+    animation: hov 500ms 0ms linear both;
+    transform: translateY(-20px);
+    opacity: 1;
+}
+.p:hover{
+    background: var(--color);
+}
+@keyframes hov{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.p1{
+    background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url("./electrical.jpg");
+    background-size: 100% 100%, cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.p2{
+    background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url("./Mechanical.jpg");
+    background-size: 100% 100%, cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.p3{
+    background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url("./circuit.jpg");
+    background-size: 100% 100%, cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.p4{
+    background: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)),url("./Bio-Tech.jpg");
+    background-size: 100% 100%, cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.p5{
+    background: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)),url("./computer.jpg");
+    background-size: 100% 100%, cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.p6{
+    background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url("./softwares.jpeg");
+    background-size: 100% 100%, cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 
 /* Page-4 */
 
 footer{
-	/* position: fixed; */
-	bottom: 0;
+    /* position: fixed; */
+    margin-top: 20rem;
+    border-top: 1px dashed #ffff;
 }
 
 @media (max-height:800px){
@@ -507,7 +671,8 @@ footer{
 	box-sizing: border-box;
 	width: 100%;
 	text-align: left;
-	font: bold 16px sans-serif;
+    font-family: var(--para-font);
+    font-size: 2rem;
 	padding: 50px 50px 60px 50px;
 	/* margin-top: 80px; */
 }
@@ -516,11 +681,15 @@ footer{
 .footer-distributed .footer-center,
 .footer-distributed .footer-right{
 	display: inline-block;
-	vertical-align: top;
+    vertical-align: top;
+    
 }
 
 /* Footer left */
-
+.footer-left>i{
+    font-size: 4rem;
+    color: gray;
+}
 .footer-distributed .footer-left{
 	width: 30%;
 }
@@ -556,8 +725,9 @@ footer{
 }
 
 .footer-distributed .footer-company-name{
-	color:  #8f9296;
-	font-size: 14px;
+    color:  #8f9296;
+    font-family: var(--para-font);
+	font-size: 1.4rem;
 	font-weight: normal;
 	margin: 0;
 }
@@ -614,11 +784,16 @@ footer{
 }
 
 .footer-distributed .footer-company-about{
-	line-height: 20px;
+    line-height: 30px;
+    font-family: var(--para-font);
 	color:  #92999f;
 	font-size: 13px;
 	font-weight: normal;
 	margin: 0;
+}
+.footer-company-about>a{
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit; /* no underline */
 }
 
 .footer-distributed .footer-company-about span{
@@ -627,6 +802,10 @@ footer{
 	font-size: 18px;
 	font-weight: bold;
 	margin-bottom: 20px;
+}
+.links{
+    font-family: var(--para-font);
+   
 }
 
 .footer-distributed .footer-icons{
@@ -675,8 +854,6 @@ footer{
 .AU>h1{
     font-size: 4rem;
     letter-spacing: 2px;
-    font-family: var(--heading-font);
-    color:rgb(255, 255, 255);
     padding: 3rem;
 }
 }
@@ -684,8 +861,6 @@ footer{
     .AU>h1{
         font-size: 3.5rem;
         letter-spacing: 2px;
-        font-family: var(--heading-font);
-        color:rgb(255, 255, 255);
         padding: 3rem;
     }
     }
@@ -706,8 +881,6 @@ footer{
     .AU>h1{
         font-size: 2.9rem;
         letter-spacing: 2px;
-        font-family: var(--heading-font);
-        color:rgb(255, 255, 255);
         padding: 3rem;
     }
     .AU>p{
@@ -721,9 +894,6 @@ footer{
         margin-top: 1rem;
         letter-spacing: 2px;
         word-spacing: 0px;
-        background: transparent;
-        color: #ffff;
-        border: 1px solid #ffff;
     }
     .AU>button>i{
         font-size: 1.6rem;
@@ -731,27 +901,18 @@ footer{
     }
     .lets>h1{
         font-size: 2.9rem;
-        font-family: var(--heading-font);
         margin: 3rem 0rem 3rem 0rem;
-        color: #ffff;
         letter-spacing: 3px;
     }
     .forms>input{
         width: 25rem;
         font-size: 1.6rem;
-        background-color: transparent;
-        border: 1px solid #ffff;
-        color: rgb(255, 255, 255);
-        border: 1px solid rgba(255, 255, 255, 0.5);
         margin: 1rem;
         padding: 1rem;
         font-family: var(--para-font);
     }
     .send-button{
         font-size: 1.2rem;
-        font-family: var(--para-font);
-        border: 2px solid rgba(255, 255, 255, 0.5);
-        color: rgb(255, 255, 255);
         padding: 0.5rem 8rem;
         margin-top: 2%;
         letter-spacing: 3px;
@@ -761,9 +922,6 @@ footer{
     }
     
     .forms>textarea{
-        background-color: transparent;
-        border: 1px solid rgba(255, 255, 255, 0.5);
-        color: rgb(255, 255, 255);
         width: 25rem;
         font-size: 1.6rem;
         margin: 2rem;
@@ -801,9 +959,6 @@ footer{
     .innercontentHead{
         font-size: 3.7rem;
         letter-spacing: 5px;
-        color:rgb(64, 78, 92);
-    font-family: var(--heading-font);
-        font-weight: var(--medium);
         position: relative;
         top: 0%;
     }
@@ -811,8 +966,6 @@ footer{
         /* background: cyan; */
         padding-right: 0rem;
         font-size: 2rem;
-        font-family: var(--para-font);
-        color:rgb(64, 78, 92);
         line-height: 1.5;
     }
 }
@@ -835,45 +988,32 @@ footer{
         display: grid;
         flex-flow: column;
         grid-template-rows: 100fr;
-        grid-template-areas:"AU";   /* box-shadow: 5px 5px 5px  rgba(39, 39, 39, 0.52); */
-        /* background-color: tomato; */
-        background: var(--color);
+        grid-template-areas:"AU";
     }
     .f2{
         width: 100%;
         height: 100%;
-       /* background-color: sienna; */
-       /* background: linear-gradient(to left, rgb(90, 230, 195) ,#1e84f8); */
-       /* box-shadow: 5px 5px 5px  rgba(39, 39, 39, 0.52); */
     }
     .AU>h1{
         text-align: center;
         font-size: 5rem;
         letter-spacing: 2px;
-        font-family: var(--heading-font);
-        color:rgb(255, 255, 255);
         padding: 3rem;
     }
     .AU>p{
         font-size: 1.8rem;
         text-align: justify;
-        font-family: var(--para-font);
         padding: 0rem 3rem 3rem 3rem;
-        color: #ffff;
         line-height: 1.8;
         /* margin-bottom: 15rem; */
     }
     .AU>button{
         padding: 0.6rem 2rem;
         margin-left: 3rem;
-        font-family: var(--btn-font);
         font-size: 1.5rem;
         margin-top: 3rem;
         letter-spacing: 5px;
         word-spacing: 2px;
-        background: transparent;
-        color: #ffff;
-        border: 1px solid #ffff;
     }
     .AU>button>i{
         font-size: 2rem;
@@ -887,15 +1027,11 @@ footer{
     .forms>input{
         width: 50rem;
         font-size: 1.8rem;
-        background-color: transparent;
-        border: 1px solid #ffff;
         margin: 1rem;
         padding: 1rem;
         font-family: var(--heading-font);
     }
     .forms>textarea{
-        background-color: transparent;
-        border: 1px solid #ffff;
         width: 50rem;
         font-size: 1.8rem;
         margin: 2rem;
@@ -932,8 +1068,6 @@ footer{
     /* background: cyan; */
     text-align: justify;
     font-size: 1.8rem;
-    font-family: var(--para-font);
-    color:rgb(64, 78, 92);
     line-height: 1.5;
 }
 }
@@ -949,29 +1083,32 @@ footer{
     .AU>h1{
         font-size: 3.8rem;
         letter-spacing: 2px;
-        font-family: var(--heading-font);
-        color:rgb(255, 255, 255);
         padding: 3rem;
     }
 }
-@media only screen and (max-width: 550px){
+@media only screen and (max-width: 560px){
     .about-image{
-     
         background:url("./guy1-removebg-preview.png");
-      
-
         background-size: 80% 100%;
         background-repeat: no-repeat;
-        background-position: center;
-        
+        background-position: center; 
+    }
+    .page-3{
+        display: grid;
+        position: relative;
+        top: 5%;
+        grid-template-columns: minmax(min-content, 1100px) ;
+        grid-template-rows: 10fr 90fr;
+        grid-template-areas:
+          " services-head "
+          " services ";
     }
 }
+
 @media only screen and (max-width: 530px){
     .AU>h1{
         font-size: 3.4rem;
         letter-spacing: 2px;
-        font-family: var(--heading-font);
-        color:rgb(255, 255, 255);
         padding: 3rem;
     }
     .AU>p{
@@ -980,14 +1117,10 @@ footer{
     .AU>button{
         padding: 0.5rem 1.6rem;
         margin-left: 3rem;
-        font-family: var(--btn-font);
         font-size: 1.3rem;
         margin-top: 1rem;
         letter-spacing: 2px;
         word-spacing: 0px;
-        background: transparent;
-        color: #ffff;
-        border: 1px solid #ffff;
     }
     .AU>button>i{
         font-size: 1.6rem;
@@ -995,27 +1128,18 @@ footer{
     }
     .lets>h1{
         font-size: 3.4rem;
-        font-family: var(--heading-font);
         margin: 3rem 0rem 3rem 0rem;
-        color: #ffff;
         letter-spacing: 3px;
     }
     .forms>input{
         width: 30rem;
         font-size: 1.6rem;
-        background-color: transparent;
-        border: 1px solid #ffff;
-        color: rgb(255, 255, 255);
-        border: 1px solid rgba(255, 255, 255, 0.5);
         margin: 1rem;
         padding: 1rem;
         font-family: var(--para-font);
     }
     .send-button{
         font-size: 1.2rem;
-        font-family: var(--para-font);
-        border: 2px solid rgba(255, 255, 255, 0.5);
-        color: rgb(255, 255, 255);
         padding: 0.5rem 8rem;
         margin-top: 2%;
         letter-spacing: 3px;
@@ -1025,9 +1149,6 @@ footer{
     }
     
     .forms>textarea{
-        background-color: transparent;
-        border: 1px solid rgba(255, 255, 255, 0.5);
-        color: rgb(255, 255, 255);
         width: 30rem;
         font-size: 1.6rem;
         margin: 2rem;
@@ -1038,16 +1159,11 @@ footer{
         /* background: cyan; */
         text-align: justify;
         font-size: 1.6rem;
-        font-family: var(--para-font);
-        color:rgb(64, 78, 92);
         line-height: 1.5;
     }
     .innercontentHead{
         font-size: 3.2rem;
         letter-spacing: 5px;
-        color:rgb(64, 78, 92);
-        font-family: var(--heading-font);
-        font-weight: var(--medium);
         position: relative;
         top: 0%;
     }
@@ -1056,9 +1172,6 @@ footer{
     .innercontentHead{
         font-size: 3.3rem;
         letter-spacing: 3px;
-        color:rgb(64, 78, 92);
-        font-family: var(--heading-font);
-        font-weight: var(--medium);
         position: relative;
         top: 0%;
     }
@@ -1066,8 +1179,6 @@ footer{
     .innerCont{
         /* background: cyan; */
         font-size: 1.5rem;
-        font-family: var(--para-font);
-        color:rgb(64, 78, 92);
         line-height: 1.5;
     }
 }
@@ -1114,27 +1225,33 @@ footer{
       
         font-size: 3rem;
         letter-spacing: 3px;
-        color:rgb(64, 78, 92);
-        font-family: var(--heading-font);
-        font-weight: var(--medium);
-     
     }
     .innerCont{
         /* background: cyan; */
         position: relative;
         top: 5%;
         font-size: 1.5rem;
-        font-family: var(--para-font);
-        color:rgb(64, 78, 92);
         line-height: 1.5;
+    }
+    .page-3{
+        display: grid;
+        position: relative;
+        top: 5%;
+        grid-template-columns: minmax(min-content, 1100px) ;
+        grid-template-rows: 5fr 95fr;
+        grid-template-areas:
+          " services-head "
+          " services ";
+    }
+    .services-head>p{
+        font-size: 4rem;
     }
 }
 @media only screen and (max-width: 400px){
+
     .AU>h1{
         font-size: 3rem;
         letter-spacing: 2px;
-        font-family: var(--heading-font);
-        color:rgb(255, 255, 255);
         padding: 3rem;
     }
     .AU>p{
@@ -1148,9 +1265,6 @@ footer{
         margin-top: 1rem;
         letter-spacing: 2px;
         word-spacing: 0px;
-        background: transparent;
-        color: #ffff;
-        border: 1px solid #ffff;
     }
     .AU>button>i{
         font-size: 1.6rem;
@@ -1158,9 +1272,7 @@ footer{
     }
     .lets>h1{
         font-size: 3.4rem;
-        font-family: var(--heading-font);
         margin: 3rem 0rem 3rem 0rem;
-        color: #ffff;
         letter-spacing: 3px;
     }
     .about-image{
@@ -1185,28 +1297,39 @@ footer{
         position: relative;
         bottom: 20%;
         font-size: 1.5rem;
-        font-family: var(--para-font);
-        color:rgb(64, 78, 92);
         line-height: 1.5;
     }
-
-}
-@media only screen and (max-width: 356px){
-   
-    .innerCont{
-     
-  
-        font-size: 1.4rem;
+    .flex-start{
+        font-size: 1.6rem;
+    }
+    .footer-distributed .footer-center i{
+      
+        font-size: 18px;
+       
+    }
+    
+    .footer-distributed .footer-center i.fa-envelope{
+        font-size: 14px;
       
     }
+  
+  
 
+}
+@media only screen and (max-width: 360px){
+   
+    .innerCont{
+        font-size: 1.4rem;
+    }
+    .services-head>p{
+        font-size: 3rem;
+    }
 }
 @media only screen and (max-width: 340px){
     .AU>h1{
         font-size: 2.8rem;
         letter-spacing: 2px;
         font-family: var(--heading-font);
-        color:rgb(255, 255, 255);
         padding: 3rem;
     }
     .AU>p{
@@ -1220,9 +1343,6 @@ footer{
         margin-top: 1rem;
         letter-spacing: 2px;
         word-spacing: 0px;
-        background: transparent;
-        color: #ffff;
-        border: 1px solid #ffff;
     }
     .AU>button>i{
         font-size: 1.6rem;
@@ -1232,16 +1352,11 @@ footer{
         font-size: 3.2rem;
         font-family: var(--heading-font);
         margin: 3rem 0rem 3rem 0rem;
-        color: #ffff;
         letter-spacing: 3px;
     }
     .forms>input{
         width: 25rem;
         font-size: 1.6rem;
-        background-color: transparent;
-        border: 1px solid #ffff;
-        color: rgb(255, 255, 255);
-        border: 1px solid rgba(255, 255, 255, 0.5);
         margin: 1rem;
         padding: 1rem;
         font-family: var(--para-font);
@@ -1249,8 +1364,6 @@ footer{
     .send-button{
         font-size: 1.2rem;
         font-family: var(--para-font);
-        border: 2px solid rgba(255, 255, 255, 0.5);
-        color: rgb(255, 255, 255);
         padding: 0.5rem 8rem;
         margin-top: 2%;
         letter-spacing: 3px;
@@ -1260,9 +1373,6 @@ footer{
     }
     
     .forms>textarea{
-        background-color: transparent;
-        border: 1px solid rgba(255, 255, 255, 0.5);
-        color: rgb(255, 255, 255);
         width: 25rem;
         font-size: 1.6rem;
         margin: 2rem;
