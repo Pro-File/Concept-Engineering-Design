@@ -2,14 +2,6 @@ console.log("Check..");
 var hidden_panel = document.getElementById('panel');
 var ham = document.querySelector('.ham');
 var cross = document.querySelector('.crossed');
-var contact = document.getElementById('contact');
-var contacts = document.getElementById('contacts');
-var home = document.getElementById('home');
-var homes = document.getElementById('homes');
-var about = document.getElementById('about');
-var abouts = document.getElementById('abouts');
-var product = document.getElementById('product');
-var products = document.getElementById('products');
 var happy=document.querySelector('.happy');
 var sad=document.querySelector('.sad');
 
@@ -38,77 +30,6 @@ cross.addEventListener('click', function(){
     cross.classList.add('hide');
     ham.classList.remove('hide');
 });
-
-contact.addEventListener('click', function(e){
-    e.preventDefault();
-    const ClickedOn = e.target.id;
-    if(ClickedOn === "contact"){
-        location.replace(`./contact.html`);
-    
-    }
-});
-
-contacts.addEventListener('click', function(e){
-    e.preventDefault();
-    const ClickedOn = e.target.id;
-    if(ClickedOn === "contacts"){
-        location.replace(`./contact.html`);
-    }
-});
-
-product.addEventListener('click', function(e){
-    e.preventDefault();
-    const ClickedOn = e.target.id;
-    if(ClickedOn === "product"){
-        location.replace(`./product.html`);
-    
-    }
-});
-
-products.addEventListener('click', function(e){
-    e.preventDefault();
-    const ClickedOn = e.target.id;
-    if(ClickedOn === "products"){
-        location.replace(`./product.html`);
-    }
-});
-
-home.addEventListener('click', function(e){
-    e.preventDefault();
-    const ClickedOn = e.target.id;
-    if(ClickedOn === "home"){
-        location.replace(`./index.html`);
-    
-    }
-});
-
-homes.addEventListener('click', function(e){
-    e.preventDefault();
-    const ClickedOn = e.target.id;
-    if(ClickedOn === "homes"){
-        location.replace(`./index.html`);
-    
-    }
-});
-
-about.addEventListener('click', function(e){
-    e.preventDefault();
-    const ClickedOn = e.target.id;
-    if(ClickedOn === "about"){
-        location.replace(`./about.html`);
-    
-    }
-});
-
-abouts.addEventListener('click', function(e){
-    e.preventDefault();
-    const ClickedOn = e.target.id;
-    if(ClickedOn === "abouts"){
-        location.replace(`./about.html`);
-    
-    }
-});
-
 
 window.addEventListener("scroll",function(){
     if(window.scrollY>300)

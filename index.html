@@ -11,15 +11,16 @@
 </head>
 <body>
     <div class="container">
-        <div class="page-1">
+        <!-- Page-1 -->
+        <div class="page-1" id="home">
             <div class="hidden-panel" id="panel">
                 <i class="fas fa-times crossed"></i>
                 <div class="center flex">
                     <ul>
-                        <li><a id="homes">Home</a></li>
-                        <li><a id="abouts">About</a></li>
-                        <li><a id="products">Products</a></li>
-                        <li><a id="contacts">Contact</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -30,10 +31,10 @@
                 </div>
                 <div class="space">
                     <ul>
-                        <li><a id="home">Home</a></li>
-                        <li><a id="about">About</a></li>
-                        <li><a id="product">Products</a></li>
-                        <li><a id="contact">Contact</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="ham-burger">
@@ -74,7 +75,7 @@
         </div>
 
         <!-- Page-2 -->
-        <div class="about-page">
+        <div class="about-page" id="about">
             <div class="about-heading ">
                 <p>About Us</p>
             </div>
@@ -97,7 +98,7 @@
         </div>
 
         <!-- Page-3 -->
-        <div class="page-3 flex">
+        <div class="page-3 flex" id="services">
             
             <div class="services-head">
                 <p>Our Services</p>
@@ -167,7 +168,8 @@
         </div>
     </div>
     
-    <footer class="footer-distributed">
+        <!-- Footer -->
+    <footer class="footer-distributed" id="contact">
 
         <div class="footer-left">
             <i class="fas fa-university"></i>
@@ -188,17 +190,17 @@
         </div>
 
         <div class="footer-center">
-            <div class="flex-start">
+            <div class="flex-start centered">
                 <i class="fa fa-map-marker "></i>
                   <p>
                     F-8 / 2 Islamabad</p>
             </div>
 
-            <div class="flex-start">
+            <div class="flex-start centered">
                 <i class="fa fa-phone "></i>
                 <p>0305-7250520</p>
             </div>
-            <div class="flex-start">
+            <div class="flex-start centered">
                 <i class="fa fa-envelope "></i>
                 <p><a href="mailto:engineerarslanhasmi@gmail.com">engineerarslanhasmi@gmail.com</a></p>
             </div>
@@ -245,6 +247,7 @@
             </div>
         </div>
     </footer>
+
     <script src="./index.js"></script>
 </body>
 </html>
