@@ -1,0 +1,44 @@
+*{
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-start{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+:root{
+    --heading-font: 'Roboto Slab', serif;
+    --para-font: 'Barlow', sans-serif;
+    --btn-font: 'Bubbler One', sans-serif;
+    --light: 300;
+    --regular: 400;
+    --medium: 500;
+    --semi-bold: 600;
+    --bold: 700;
+    --extra-bold: 800;
+    --color:#2c292f;
+    --head-color: #e0ac1c;
+}
+html{
+    font-size: 62.5%;
+    background-color: var(--color);
+}
+.container{
+    display: grid;
+    grid-template-rows: repeat(2, minmax(min-content,100vh));
+    background-color: var(--color);
+    /* grid-template-areas: "page-1"; */
+}
+.page-1{
+    background: rgb(108, 94, 200);
+}
+.page-2{
+    background: rgb(21, 129, 172);
+}

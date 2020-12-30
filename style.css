@@ -561,7 +561,8 @@ html{
     position: relative;
     left: 10%;
     background-color: rgba(66, 66, 66, 0.103);
-    box-shadow: 5px 5px 5px  rgba(39, 39, 39, 0.52);
+    border: 1px dashed #ffff;
+    box-shadow: 5px 5px 5px rgba(39, 39, 39, 0.52);
     flex-flow: column;
 }
 .p>.sub-head{
@@ -578,7 +579,7 @@ html{
 .hide-items{
     margin-top: 5rem;
     margin-bottom: 5rem;
-    width: 75%;
+    width: 100%;
     height: 80%;
     /* background-color: rgba(255, 140, 0, 0.322); */
     opacity: 0;
@@ -586,22 +587,28 @@ html{
 .icon-set{
     position: relative;
     top: 100%;
-    width: 100%;
-    height: 50%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
     /* background-color: cyan; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
-.icon-set>i{
+.icon-set a i{
     font-size: 4rem;
-    padding-left: 3rem;
-    padding-top: 2rem;
+    color: #ffff;
 }
-.icon-set>i:hover{ cursor: pointer; color: #ffff;}
+.icon-set>a>i:hover{ cursor: pointer; color: var(--head-color);}
 .p:hover .hide-items{
     cursor: pointer;
     transition: all 400ms ease-in-out;
     animation: hov 500ms 0ms linear both;
     transform: translateY(-20px);
     opacity: 1;
+}
+.p:hover .sub-head{
+    color: var(--head-color);
 }
 .p:hover{
     background: var(--color);
@@ -672,8 +679,8 @@ footer{
 	width: 100%;
 	text-align: left;
     font-family: var(--para-font);
-    font-size: 2rem;
-	padding: 50px 50px 60px 50px;
+    font-size: 1.6rem;
+	padding: 50px 3rem;
 	/* margin-top: 80px; */
 }
 
@@ -702,8 +709,8 @@ footer{
 
 /* The company logo */
 
-.footer-distributed .footer-left img{
-	width: 30%;
+.footer-distributed .footer-left{
+	width: 25%;
 }
 
 .footer-distributed h3 span{
@@ -735,7 +742,7 @@ footer{
 /* Footer Center */
 
 .footer-distributed .footer-center{
-	width: 35%;
+	width: 40%;
 }
 
 
@@ -782,7 +789,7 @@ footer{
 /* Footer Right */
 
 .footer-distributed .footer-right{
-	width: 30%;
+	width: 32%;
 }
 
 .footer-distributed .footer-company-about{
@@ -790,9 +797,10 @@ footer{
     font-family: var(--para-font);
 	color:  #92999f;
 	font-size: 13px;
-	font-weight: normal;
-	margin: 0;
+    font-weight: normal;
+    margin: 0;
 }
+
 .footer-company-about>a{
     color: inherit; /* blue colors for links too */
     text-decoration: inherit; /* no underline */
@@ -801,13 +809,11 @@ footer{
 .footer-distributed .footer-company-about span{
 	display: block;
 	color:  #ffffff;
-	font-size: 18px;
-	font-weight: bold;
-	margin-bottom: 20px;
-}
-.links{
+	font-size: 24px;
+    font-weight: bold;
     font-family: var(--para-font);
-   
+    margin-top: 15px;
+    margin-bottom: 10px;
 }
 
 .footer-distributed .footer-icons{
@@ -848,8 +854,16 @@ footer{
 
 	.footer-distributed .footer-center i{
 		margin-left: 0;
-	}
-
+    }
+    .footer-distributed .footer-right{
+        text-align: left;
+    }
+    .footer-distributed .footer-right .footer-icons{
+        text-align: center;
+    }
+    .footer-distributed .footer-right .footer-icons a{
+        margin: 0rem 1rem;
+    }
 }
 /* Media Queries */
 @media only screen and (max-width: 1310px){

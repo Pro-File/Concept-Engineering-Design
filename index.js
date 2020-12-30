@@ -7,6 +7,7 @@ var sad=document.querySelector('.sad');
 
 
 
+
 var aboutimage=document.querySelector(".about-image")
 
 var page_1 = document.querySelector('.page-1');
@@ -31,6 +32,7 @@ cross.addEventListener('click', function(){
     ham.classList.remove('hide');
 });
 
+
 window.addEventListener("scroll",function(){
     if(window.scrollY>300)
     {
@@ -46,3 +48,23 @@ window.addEventListener("scroll",function(){
 
     }
 })
+
+//Sending Email Work
+var sendMailBtn = document.querySelector('#sendMailBtn');
+var sendMail = async (e)=>{
+    console.log("hello")
+    e.preventDefault();
+    let name = document.querySelector('.fullname').value;
+    let subject = document.querySelector('.subject').value;
+    let about = document.querySelector('.about').value;
+    let mail = "muhammadmoiz269@gmail.com";
+    name = name.split(' ').join('%20');
+    subject = subject.split(' ').join('%20');
+    about = about.split(' ').join('%20');
+    about = about.split('\n').join('%0D%0A');
+    location.assign("mailto:"+mail
+    +"?subject="+subject
+    +"&body="+"Name: "+name+"%0D%0A"+about);
+}
+sendMailBtn.addEventListener("click",e=>sendMail(e));
+//Sending Email Work Finised
