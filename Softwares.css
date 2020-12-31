@@ -1,0 +1,247 @@
+*{
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-start{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+:root{
+    --heading-font: 'Roboto Slab', serif;
+    --para-font: 'Barlow', sans-serif;
+    --btn-font: 'Bubbler One', sans-serif;
+    --light: 300;
+    --regular: 400;
+    --medium: 500;
+    --semi-bold: 600;
+    --bold: 700;
+    --extra-bold: 800;
+    --color:#2c292f;
+    --head-color: #e0ac1c;
+}
+html{
+    font-size: 62.5%;
+    background-color: var(--color);
+}
+
+.page1{
+    height: 20vh;
+    /* background: lightseagreen; */
+    font-size: 5rem;
+    font-weight:var(--medium);
+    color:var(--head-color);
+   font-family: var(--heading-font);
+    letter-spacing: 8px;
+    word-spacing: 15px;
+   
+   
+    
+}
+
+.innerheading{
+    height: 10vh;
+    font-size: 3rem;
+    font-weight:var(--medium);
+    color:#92999f;
+   font-family: var(--para-font);
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    text-align: start;
+    padding-left:7rem;
+}
+.page2 .carousel{
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 30px;
+}
+
+
+.carousel .card{
+    /* background: red; */
+    height: 200px;
+    width: 300px;
+    text-align: center;
+    color: #ffff;
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+.carousel .card-1{
+    border: 1px solid gray;
+    background-image: url("./Matlab_Logo.png");
+    background-size: 70% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.carousel .card-2{
+    border: 1px solid gray;
+    background-image: url("./proteus\ logo.png");
+    background-size: 70% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.carousel .card-3{
+    border: 1px solid gray;
+    background-image: url("./LTLOGO.png");
+    background-size: 70% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.carousel .card-4{
+    border: 1px solid gray;
+    background-image: url("./ETAP-removebg-preview.png");
+    background-size: 70% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.carousel .card-5{
+    border: 1px solid gray;
+    background-image: url("./Altium.png");
+    background-size: 70% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.carousel .card-6{
+    border: 1px solid gray;
+    background-image: url("./dev\ c++.png");
+    background-size: 70% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.carousel .card-7{
+    border: 1px solid gray;
+    background-image: url("./mulitism.png");
+    background-size: 70% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.carousel .card-8{
+    border: 1px solid gray;
+    background-image: url("./autocad-removebg-preview.png");
+    background-size: 70% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.carousel .card-9{
+    border: 1px solid gray;
+    background-image: url("./ise-removebg-preview.png");
+    background-size: 70% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.carousel .card-10{
+    border: 1px solid gray;
+    background-image: url("./labview-removebg-preview.png");
+    background-size: 70% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.carousel .card-11{
+    border: 1px solid gray;
+    background-image: url("./pspice-removebg-preview.png");
+    background-size: 70% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.carousel .card-12{
+    background: #630460;
+}
+/* .owl-dots{
+    text-align: center;
+    margin-top: 40px;
+}
+.owl-dot{
+    height: 15px;
+    width: 45px;
+    border-radius: 25px;
+    border: 2px solid #0072bc;
+    cursor: pointer;
+    outline: none;
+    margin: 0 5px;
+    transition: all 0.3 ease;
+}
+.owl-dot:hover,
+.owl-dot.active
+{
+    background: #0072bc;
+} */
+@media only screen and (max-width: 945px){
+    .card{
+     position: relative;
+     left: 10%;
+    }
+
+}
+
+@media only screen and (max-width: 750px)
+{
+    .page1{
+      
+        font-size: 4rem;
+          
+        
+    }
+    .innerheading{
+     
+        font-size: 2.5rem;
+        letter-spacing: 1px;
+        word-spacing: 3px;
+  
+    }
+
+}
+@media only screen and (max-width: 680px){
+    .carousel .card{
+    /* background: red; */
+    height: 170px;
+    width: 250px;
+    text-align: center;
+    color: #ffff;
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+.page1{
+   
+    font-size: 3.5rem;
+    letter-spacing: 4px;
+    word-spacing: 10px;
+    text-align: center;
+   
+   
+    
+}
+.innerheading{
+     
+    font-size: 2.2rem;
+    word-spacing: 2px;
+
+}
+
+}
+
+@media only screen and (max-width: 570px){
+    .carousel .card{
+        /* background: red; */
+        height: 200px;
+        width: 300px;
+        text-align: center;
+        color: #ffff;
+        font-size: 3rem;
+        font-weight: bold;
+        margin: 20px 0;
+        border-radius: 10px;
+       
+    }
+
+}
