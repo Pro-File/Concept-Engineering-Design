@@ -29,8 +29,27 @@
 html{
     font-size: 62.5%;
     background-color: var(--color);
+    overflow-x: hidden;
 }
+.owl-carousel{
+    overflow-x: hidden;
+}
+.owl-carousel .owl-stage-outer {
+    /* override */
+    overflow-x: hidden;
+}
+.item{
+    opacity: 0;
+    width: 300px;
+  }
+  .owl-item.active {
+    opacity: 1;
+  }
 
+#bodyContent {
+    /* override */
+    overflow: hidden;
+}
 .page1{
     height: 20vh;
     /* background: lightseagreen; */
@@ -39,12 +58,72 @@ html{
     color:var(--head-color);
    font-family: var(--heading-font);
     letter-spacing: 8px;
-    word-spacing: 15px;
-   
-   
-    
+    word-spacing: 15px; 
+}
+.search-bar{
+    height: 12vh;
+    margin: 3rem 0rem;
+    /* background: seagreen; */
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-areas: "date search";
+}
+.date{
+    /* background: yellowgreen; */
+    grid-area: date;
+}
+#timeHeading{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 3.5rem;
+    font-weight: var(--light);
+    font-family: var(--heading-font);
+    color: #ffff;
+    margin-left: 3rem;
+    /* background: lawngreen; */
 }
 
+
+.searchBtn{
+    /* background: yellow; */
+    grid-area: search;
+}
+form{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    /* background: lawngreen; */
+}
+
+.searchBtn>form>input{
+    width: 20rem;
+    height: 1.7em;
+    font-size: 1.8rem;
+    background-color: transparent;
+    border: 1px solid #ffff;
+    color: var(--head-color); 
+    padding: 0rem 1rem;
+    font-family: var(--para-font);
+}
+form>input::placeholder{   color: rgb(255, 255, 255);}
+form>input:focus { outline: none;}
+form>button{
+    float: right;
+    width: 4rem;
+    height: 1.8em;
+    font-size: 1.8rem;
+    margin-right: 3rem;
+    color: var(--color);
+    background-color: #ffff;
+    /* border: 1px solid #ffff; */
+    cursor: pointer;
+}
+.form>button:focus{
+    outline: none;
+}
 .innerheading{
     height: 10vh;
     font-size: 3rem;
@@ -59,7 +138,6 @@ html{
 .page2 .carousel{
     max-width: 1200px;
     margin: auto;
-    padding: 0 30px;
 }
 .carousel .card{
     /* background: red; */
@@ -75,17 +153,24 @@ html{
     left: 10%;
     background-color: rgba(66, 66, 66, 0.103);
     border: 1px dashed #ffff;
-    box-shadow: 5px 5px 5px rgba(39, 39, 39, 0.52);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
     flex-flow: column;
 }
-.card>.sub-head{
+.slider{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* background: sandybrown; */
+    filter: blur(5px);
+}
+.sub-head{
     position: relative;
-    top: 20%;
-    font-size: 3rem;
+    top: 25%;
+    font-size: 3.2rem;
     font-family: var(--para-font);
     text-transform: uppercase;
     text-align: center;
-    letter-spacing: 10px;
+    letter-spacing: 8px;
     word-spacing: 4px;
     margin-bottom: 1rem;
     color: #ffff;
@@ -94,13 +179,15 @@ html{
     margin-top: 5rem;
     margin-bottom: 5rem;
     width: 100%;
-    height: 70%;
+    height: 30%;
     /* background-color: rgba(255, 151, 24, 0.322); */
     opacity: 0;
 }
 .icon-set{
     width: 100%;
     height: 80%;
+    flex-flow: column;
+    transform: translateY(-10px);
     /* background-color: cyan; */
 }
 .icon-set>a>i{
@@ -112,15 +199,24 @@ html{
     cursor: pointer;
     transition: all 400ms ease-in-out;
     animation: hov 500ms 0ms linear both;
-    transform: translateY(-20px);
+    transform: translateY(20px);
     opacity: 1;
+}
+.card:hover .slider{
+    transition: all 400ms ease-in-out;
+    animation: blurry 500ms 0ms linear both;
 }
 
 .card:hover .sub-head{
     color: var(--head-color);
 }
-.card:hover{
-    background: var(--color);
+@keyframes blurry{
+    from{
+        filter: blur(5px);
+    }
+    to{
+        filter: blur(20px);
+    }
 }
 @keyframes hov{
     from{
@@ -132,85 +228,475 @@ html{
 }
 
 .carousel .card-1{
-    border: 1px solid gray;
-    background-image: url("./Matlab_Logo.png");
+ /* background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url("./electrical.jpg"); */
+    background-image: url("./images/Matlab_Logo.png");
     background-size: 70% 80%;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .carousel .card-2{
-    border: 1px solid gray;
-    background-image: url("./proteus\ logo.png");
+
+    background-image: url("./images/proteus\ logo.png");
     background-size: 70% 80%;
     background-repeat: no-repeat;
     background-position: center;
 }
 .carousel .card-3{
-    border: 1px solid gray;
-    background-image: url("./LTLOGO.png");
+
+    background-image: url("./images/LTLOGO.png");
     background-size: 70% 80%;
     background-repeat: no-repeat;
     background-position: center;
 }
 .carousel .card-4{
-    border: 1px solid gray;
-    background-image: url("./ETAP-removebg-preview.png");
+
+    background-image: url("./images/ETAP-removebg-preview.png");
     background-size: 70% 80%;
     background-repeat: no-repeat;
     background-position: center;
 }
 .carousel .card-5{
-    border: 1px solid gray;
-    background-image: url("./Altium.png");
+
+    background-image: url("./images/Altium.png");
     background-size: 70% 80%;
     background-repeat: no-repeat;
     background-position: center;
 }
 .carousel .card-6{
-    border: 1px solid gray;
-    background-image: url("./dev\ c++.png");
+
+    background-image: url("./images/dev\ c++.png");
     background-size: 70% 80%;
     background-repeat: no-repeat;
     background-position: center;
 }
 .carousel .card-7{
-    border: 1px solid gray;
-    background-image: url("./mulitism.png");
+
+    background-image: url("./images/mulitism.png");
     background-size: 70% 80%;
     background-repeat: no-repeat;
     background-position: center;
 }
 .carousel .card-8{
-    border: 1px solid gray;
-    background-image: url("./autocad-removebg-preview.png");
+
+    background-image: url("./images/autocad-removebg-preview.png");
     background-size: 70% 80%;
     background-repeat: no-repeat;
     background-position: center;
 }
 .carousel .card-9{
-    border: 1px solid gray;
-    background-image: url("./ise-removebg-preview.png");
+
+    background-image: url("./images/ise-removebg-preview.png");
     background-size: 70% 80%;
     background-repeat: no-repeat;
     background-position: center;
 }
 .carousel .card-10{
-    border: 1px solid gray;
-    background-image: url("./labview-removebg-preview.png");
+
+    background-image: url("./images/labview-removebg-preview.png");
     background-size: 70% 80%;
     background-repeat: no-repeat;
     background-position: center;
 }
 .carousel .card-11{
-    border: 1px solid gray;
-    background-image: url("./pspice-removebg-preview.png");
+
+    background-image: url("./images/pspice-removebg-preview.png");
     background-size: 70% 80%;
     background-repeat: no-repeat;
     background-position: center;
 }
 .carousel .card-12{
-    background: #630460;
+
+    background-image: url("./images/microwindd.png");
+    background-size: 70% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-13{
+
+    background-image: url("./images/python.png");
+    background-size: 60% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-14{
+
+    background-image: url("./images/spyder.png");
+    background-size: 70% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-15{
+
+    background-image: url("./images/ultraedit.png");
+    background-size: 70% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-16{
+
+    background-image: url("./images/notepad++.png");
+    background-size: 70% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-17{
+
+    background-image: url("./images/vscode.png");
+    background-size: 60% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-18{
+
+    background-image: url("./images/sublime-removebg-preview.png");
+    background-size: 60% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-19{
+
+    background-image: url("./images/atom.png");
+    background-size: 60% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-20{
+
+    background-image: url("./images/brackets.png");
+    background-size: 60% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-21{
+
+    background-image: url("./images/pycharm.png");
+    background-size: 60% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-22{
+
+    background-image: url("./images/audacity-removebg-preview.png");
+    background-size: 60% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-23{
+
+    background-image: url("./images/bandLAB.png");
+    background-size: 60% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-24{
+
+    background-image: url("./images/soundbridge.jpg");
+    background-size: 60% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-25{
+
+    background-image: url("./images/tracktion-icon.png");
+    background-size: 60% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-26{
+
+    background-image: url("./images/avid\ pro.png");
+    background-size: 60% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-27{
+
+    background-image: url("./images/ableton.png");
+    background-size: 60% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-28{
+
+    background-image: url("./images/reaper-removebg-preview.png");
+    background-size: 60% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-29{
+
+    background-image: url("./images/Davinci-removebg-preview.png");
+    background-size: 60% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-30{
+
+    background-image: url("./images/hitfilm-express.png");
+    background-size: 60% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-31{
+
+    background-image: url("./images/vsdc-removebg-preview.png");
+    background-size: 60% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-32{
+
+    background-image: url("./images/lightroom.png");
+    background-size: 60% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-33{
+
+    background-image: url("./images/openshot-removebg-preview.png");
+    background-size: 60% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+
+}
+.carousel .card-34{
+
+    background-image: url("./images/shotcut.png");
+    background-size: 60% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-35{
+
+    background-image: url("./images/blender-removebg-preview.png");
+    background-size: 60% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-36{
+
+    background-image: url("./images/kdenliv.png");
+    background-size: 60% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-37{
+
+    background-image: url("./images/tinytake-removebg-preview.png");
+    background-size: 60% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-38{
+
+    background-image: url("./images/shareX-removebg-preview.png");
+    background-size: 60% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-39{
+
+    background-image: url("./images/screeenrec.png");
+    background-size: 60% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-40{
+
+    background-image: url("./images/OBS.png");
+    background-size: 60% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-41{
+
+    background-image: url("./images/shadowplay.png");
+    background-size: 60% 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-42{
+
+    background-image: url("./images/flashback.png");
+    background-size: 60% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-43{
+
+    background-image: url("./images/FBX.png");
+    background-size: 60% 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-44{
+
+    background-image: url("./images/AMD-removebg-preview.png");
+    background-size: 60% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-45{
+
+    background-image: url("./images/daz3d-removebg-preview.png");
+    background-size: 50% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-46{
+
+    background-image: url("./images/gimp.png");
+    background-size: 60% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-47{
+
+    background-image: url("./images/blender-removebg-preview.png");
+    background-size: 60% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-48{
+
+    background-image: url("./images/inkscape.png");
+    background-size: 60% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-49{
+
+    background-image: url("./images/ubuntu.png");
+    background-size: 60% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-50{
+
+    background-image: url("./images/linixmint.png");
+    background-size: 60% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-51{
+
+    background-image: url("./images/Etcher-icon.png");
+    background-size: 60% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-52{
+
+    background-image: url("./images/zorin-removebg-preview.png");
+    background-size: 60% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-53{
+
+    background-image: url("./images/qubes.png");
+    background-size: 60% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-54{
+
+    background-image: url("./images/nomad-removebg-preview.png");
+    background-size: 60% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-55{
+
+    background-image: url("./images/ubuntuStudio.png");
+    background-size: 50% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-56{
+
+    background-image: url("./images/manjaro-removebg-preview.png");
+    background-size: 50% 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-57{
+
+    background-image: url("./images/pclinux");
+    background-size: 50% 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-58{
+
+    background-image: url("./images/trueos-removebg-preview.png");
+    background-size: 50% 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-59{
+
+    background-image: url("./images/reactos.png");
+    background-size: 50% 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.carousel .card-60{
+
+    background-image: url("./images/riscos.png");
+    background-size: 50% 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
 }
 /* .owl-dots{
     text-align: center;
@@ -236,16 +722,25 @@ html{
      position: relative;
      left: 10%;
     }
+    html{
+        font-size: 50%;
+    }
+}
 
+@media only screen and (max-width: 850px){
+    .carousel .card{
+        /* background: red; */
+        height: 240px;
+        width: 300px;
+      /* position: relative;
+      left: 10%; */ 
+    }
 }
 
 @media only screen and (max-width: 750px)
 {
     .page1{
-      
         font-size: 4rem;
-          
-        
     }
     .innerheading{
      
@@ -256,49 +751,171 @@ html{
     }
 
 }
-@media only screen and (max-width: 680px){
+@media only screen and (max-width: 700px){
     .carousel .card{
-    /* background: red; */
-    height: 170px;
-    width: 250px;
-    text-align: center;
-    color: #ffff;
-    font-size: 3rem;
-    font-weight: bold;
-    margin: 20px 0;
-    border-radius: 10px;
+        /* background: red; */
+        height: 200px;
+        width: 250px;
+      /* position: relative;
+      left: 10%; */ 
+    }
+    #timeHeading{
+        font-size: 2.6rem;
+        margin-left: 3rem;
+        /* background: lawngreen; */
+    }
+
+    .searchBtn>form>input{
+        width: 20rem;
+        height: 1.7em;
+        font-size: 1.8rem;
+        padding: 0rem 1rem;
+    }
+    form>button{
+        float: right;
+        width: 4rem;
+        height: 1.8em;
+        font-size: 1.8rem;
+        margin-right: 3rem;
+    }
 }
-.page1{
-   
+@media only screen and (max-width: 680px){
+
+.page1{   
     font-size: 3.5rem;
     letter-spacing: 4px;
     word-spacing: 10px;
     text-align: center;
-   
-   
-    
 }
 .innerheading{
-     
     font-size: 2.2rem;
     word-spacing: 2px;
-
 }
-
 }
+@media only screen and (max-width: 630px){
+    .carousel .card{
+        /* background: red; */
+        height: 180px;
+        width: 220px;
+      /* position: relative;
+      left: 10%; */ 
+    }
+}
+@media only screen and (max-width: 550px){
+    .carousel .card{
+        /* background: red; */
+        height: 150px;
+        width: 200px;
+      /* position: relative;
+      left: 10%; */ 
+    }
+    .sub-head{
+        font-size: 2.6rem;
+    }
+    #timeHeading{
+        font-size: 2.6rem;
+        margin-left: 3rem;
+        /* background: lawngreen; */
+    }
 
-@media only screen and (max-width: 570px){
+    .searchBtn>form>input{
+        width: 16rem;
+        height: 1.7em;
+        font-size: 1.8rem;
+        padding: 0rem 1rem;
+    }
+    form>button{
+        float: right;
+        width: 4rem;
+        height: 1.8em;
+        font-size: 1.8rem;
+        margin-right: 3rem;
+    }
+}
+@media only screen and (max-width: 550px){
+    .page1{
+        letter-spacing: 1px;
+        word-spacing: 3px;
+        text-align: center;
+    }
+    .innerheading{   
+        font-size: 2.2rem;
+        word-spacing: 2px;
+    }
+}
+@media only screen and (max-width: 500px){
+
     .carousel .card{
         /* background: red; */
         height: 200px;
         width: 300px;
-        text-align: center;
-        color: #ffff;
+      position: relative;
+      left: 20%;
+    }
+    .sub-head{
+        font-size: 3.8rem;
+    }
+}
+
+@media only screen and (max-width: 420px)
+{
+    .page1{
+   
         font-size: 3rem;
-        font-weight: bold;
-        margin: 20px 0;
-        border-radius: 10px;
-       
+        letter-spacing: 1px;
+        word-spacing: 3px;
+        text-align: center; 
+    }
+    .innerheading{
+         
+        font-size: 2rem;
+        word-spacing: 2px;
+    }
+    .carousel .card{
+        /* background: red; */
+        height: 180px;
+        width: 240px;
+      position: relative;
+      left: 22%;
+    }
+    .sub-head{
+        font-size: 3rem;
+    }
+    #timeHeading{
+        font-size: 2.2rem;
+        margin-left: 1rem;
+        /* background: lawngreen; */
     }
 
+    .searchBtn>form>input{
+        width: 15rem;
+        height: 1.7em;
+        font-size: 1.6rem;
+        padding: 0rem 1rem;
+    }
+    form>button{
+        float: right;
+        width: 3rem;
+        height: 1.8em;
+        font-size: 1.7rem;
+        margin-right: 1rem;
+    }
+}
+@media only screen and (max-width: 370px)
+{
+    .innerheading{
+         
+        font-size: 2rem;
+        word-spacing: 0px;
+    }
+    .carousel .card{
+        /* background: red; */
+        height: 180px;
+        width: 240px;
+      position: relative;
+      left: 18%;
+    }
+    .sub-head{
+        font-size: 3rem;
+    }
 }

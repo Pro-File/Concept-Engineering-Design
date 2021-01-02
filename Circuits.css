@@ -29,18 +29,4 @@
 html{
     font-size: 62.5%;
     background-color: var(--color);
-    overflow-x: hidden;
-}
-
-.container{
-    display: grid;
-    grid-template-rows: repeat(2, minmax(min-content,100vh));
-    background-color: var(--color);
-    /* grid-template-areas: "page-1"; */
-}
-.page-1{
-    background: rgb(108, 94, 200);
-}
-.page-2{
-    background: rgb(21, 129, 172);
 }
