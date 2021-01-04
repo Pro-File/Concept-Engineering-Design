@@ -898,25 +898,19 @@ form>button{
     background-position: center;
     
 }
-/* .owl-dots{
-    text-align: center;
-    margin-top: 40px;
+.owl-nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.owl-dot{
-    height: 15px;
-    width: 45px;
-    border-radius: 25px;
-    border: 2px solid #0072bc;
-    cursor: pointer;
-    outline: none;
-    margin: 0 5px;
-    transition: all 0.3 ease;
+.owl-prev>span{
+    padding-right: 15px;
+    font-size: 5rem;
 }
-.owl-dot:hover,
-.owl-dot.active
-{
-    background: #0072bc;
-} */
+.owl-next>span{
+    padding-left: 15px;
+    font-size: 5rem;
+}
 @media only screen and (max-width: 945px){
     .card{
      position: relative;
