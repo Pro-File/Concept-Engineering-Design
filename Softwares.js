@@ -1,6 +1,6 @@
 var add = document.getElementById("add");
 var back = document.getElementById('form-back');
-// var content = document.querySelector('.content');
+var content = document.querySelector('.Content');
 var hidden = document.querySelector('.hidden');
 
 $('.carousel').owlCarousel({
@@ -149,7 +149,7 @@ var softwares=[
     },
     {
         name:"pycharm",
-        URLlink:"http://bit.ly/2KDzJsL",
+        URLlink:"http://bit.ly/3nPJEK9",
         Imglink:"./images/pycharm.png"
 
     },
@@ -393,6 +393,22 @@ var softwares=[
 
 var search=document.getElementById("search");
 var btn=document.getElementById("btn");
+var List = document.getElementById('List');
+function Add(name, url, img){
+
+    const position = "beforeend";
+    const item = `<li class="item">
+        <div class="img"> <img src="${img}" width="75px" height="75px" border-radius ="50%"></div>
+        <h1 class="head">${name}</h1>
+        <a href="${url}">
+        <i class="fas fa-angle-double-right view"></i>
+        </a>
+    </li>`;
+
+    List.insertAdjacentHTML(position, item);
+
+
+};
 
 btn.addEventListener("click",(e)=>{
     e.preventDefault();
@@ -402,6 +418,7 @@ btn.addEventListener("click",(e)=>{
     hidden.classList.remove('unvisible');
     hidden.classList.remove('unopac');
     hidden.classList.add('opac');
+    // content.classList.add('blur');
     for(var i=0;i<softwares.length;i++)
     {
         if(softwares[i].name.includes(searcheditem.toLowerCase()) || softwares[i].name.includes(searcheditem.toUpperCase()))
@@ -409,7 +426,12 @@ btn.addEventListener("click",(e)=>{
             result.push(softwares[i])
         }
     }
-    console.log(result)
+    search.value = "";
+    List.innerHTML = "";
+    for(var i=0; i<result.length; i++){
+        Add(result[i].name, result[i].URLlink, result[i].Imglink);
+    }
+    // console.log(result)
 })
 
 
